@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Alert } from 'react-bootstrap';
 
 const MessageBox = ({variant,children}) => {

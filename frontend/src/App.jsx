@@ -1,19 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import { Container, Navbar } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Container } from 'react-bootstrap';
+import Header from './components/Header';
 
 function App() {
   return (
     <>
-      <header>
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <LinkContainer to="/">
-              <Navbar.Brand>E-Shop</Navbar.Brand>
-            </LinkContainer>
-          </Container>
-        </Navbar>
-      </header>
+      <Header/>
       <Container className="mt-3">
         <main>
           <Outlet />

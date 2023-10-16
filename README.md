@@ -61,7 +61,13 @@
         ii.  create 3 columns for image, info and action
 
 13. Create Loading and Message Component
-        i.   create loading component
-        ii.  use spinner component
+          i.  create loading component
+         ii.  use spinner component
         iii. craete message component
-        iv.  create utils.js to define getError fuction
+         iv.  create utils.js to define getError fuction
+
+14.  Create React Context For Add Item To Cart
+         i. Create React Context
+        ii. define reducer
+       iii. create store provider
+        iv. implement add to cart button click handler

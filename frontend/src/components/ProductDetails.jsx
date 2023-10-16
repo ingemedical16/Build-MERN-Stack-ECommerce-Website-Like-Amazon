@@ -1,14 +1,26 @@
+/* eslint-disable react/prop-types */
 import { Badge, Button, Card, Col, ListGroup, Row } from 'react-bootstrap';
 import Rating from './Rating';
 import { Helmet } from 'react-helmet-async';
+import { useContext } from 'react';
+import { store } from '../Store/StoreProvider';
+import { ACTIONS } from '../Store/action';
 
 const ProductDetails = (props) => {
   const { product } = props;
+  const { dispatch: ctxDispatch } = useContext(store);
+  const { CART_ADD_ITEM } = ACTIONS;
+  const addToCardHandler = () => {
+    ctxDispatch({
+      type: CART_ADD_ITEM,
+      payload: { ...product, quantity: 1 },
+    });
+  };
   return (
     <Row>
-            <Helmet>
-                <title>{product.name}</title>
-            </Helmet>
+      <Helmet>
+        <title>{product.name}</title>
+      </Helmet>
       <Col md={6}>
         <img className="img-large" src={product.image} alt={product.name} />
       </Col>
@@ -52,7 +64,9 @@ const ProductDetails = (props) => {
               {product.countInStock > 0 && (
                 <ListGroup.Item>
                   <div className="d-grid">
-                    <Button variant="primary">Add to Cart</Button>
+                    <Button onClick={addToCardHandler} variant="primary">
+                      Add to Cart
+                    </Button>
                   </div>
                 </ListGroup.Item>
               )}

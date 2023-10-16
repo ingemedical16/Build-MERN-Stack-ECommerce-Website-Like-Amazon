@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const Rating = ({ rating, numReviews,caption }) => {
   return (
     <div className="rating">

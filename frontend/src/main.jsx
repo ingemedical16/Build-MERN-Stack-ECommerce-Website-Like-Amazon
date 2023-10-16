@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import HomeScreen from './screens/HomeScreen.jsx';
 import ProductScreen from './screens/ProductDetailsScreen.jsx';
+import StoreProvider from './Store/StoreProvider.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,8 +26,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
+    <StoreProvider>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </StoreProvider>
   </React.StrictMode>
 );
