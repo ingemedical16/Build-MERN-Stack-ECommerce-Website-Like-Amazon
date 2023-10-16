@@ -45,7 +45,7 @@ const Product = (props) => {
           disabled={!(product.countInStock > 0)}
           onClick={addToCardHandler}
         >
-          {product.countInStock > 0 ? 'Add to cart' : 'Unavailable'}
+          {product.countInStock > 0 ? 'Add to cart' : 'Out of Stock'}
         </Button>
       </Card.Body>
     </Card>
