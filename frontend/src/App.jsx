@@ -1,15 +1,26 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Container, Navbar } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 function App() {
   return (
-    <>
+    <div className="site-contaner d-flex flex-column">
       <header>
-        <Link to="/">E-Shop</Link>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <LinkContainer to="/">
+              <Navbar.Brand>E-Shop</Navbar.Brand>
+            </LinkContainer>
+          </Container>
+        </Navbar>
       </header>
-      <main>
+      <main className="container">
         <Outlet />
       </main>
-    </>
+      <footer>
+        <div className="text-center">All rights reserved</div>
+      </footer>
+    </div>
   );
 }
 
