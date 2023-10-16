@@ -15,3 +15,8 @@
     ii- add product images
     iii- render products
     iv- style products
+
+6. Add page routing
+    i. npm i react-router-dom
+    ii. create route for home screen
+    iii. create router for product screen
