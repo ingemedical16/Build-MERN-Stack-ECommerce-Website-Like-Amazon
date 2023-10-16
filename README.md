@@ -71,3 +71,6 @@
         ii. define reducer
        iii. create store provider
         iv. implement add to cart button click handler
+15.  Complete Add To Cart
+        i.  check exist item in the cart
+       ii.  check count in stock in backend

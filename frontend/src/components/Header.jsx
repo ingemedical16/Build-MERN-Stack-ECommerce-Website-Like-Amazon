@@ -1,4 +1,4 @@
-import  { useContext } from 'react';
+import { useContext } from 'react';
 import { Badge, Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
@@ -9,17 +9,17 @@ const Header = () => {
   const { cart } = state;
   return (
     <header>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>E-Shop</Navbar.Brand>
           </LinkContainer>
-          <Nav className="me-auto">
+          <Nav className="me-auto  w-100  justify-content-end">
             <Link className="nav-link" to="/cart">
               Cart
               {cart.cartItems.length > 0 && (
                 <Badge pill bg="danger">
-                  {cart.cartItems.length}
+                  {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                 </Badge>
               )}
             </Link>
