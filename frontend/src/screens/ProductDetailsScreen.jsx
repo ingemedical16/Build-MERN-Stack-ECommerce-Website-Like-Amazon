@@ -2,6 +2,9 @@ import axios from 'axios';
 import { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductDetailsScreen from '../components/ProductDetails';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+import { getError } from '../utils';
 
 const FETCH_REQUEST = 'FETCH_REQUEST';
 const FETCH_SUCCESS = 'FETCH_SUCCESS';
@@ -40,16 +43,16 @@ const ProductScreen = () => {
         console.log(error.message);
         dispatch({
           type: FETCH_FAIL,
-          payload: error.message,
+          payload:  getError(error),
         });
       }
     };
     fetchData();
   }, [slug]);
   return loading ? (
-    <div>Loading...</div>
+    <LoadingBox />
   ) : error ? (
-    <div>{error}</div>
+    <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
       <ProductDetailsScreen product={product} />

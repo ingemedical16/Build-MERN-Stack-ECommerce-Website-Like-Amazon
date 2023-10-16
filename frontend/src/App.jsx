@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 function App() {
   return (
-    <div className="site-contaner d-flex flex-column">
+    <>
       <header>
         <Navbar bg="dark" variant="dark">
           <Container>
@@ -14,13 +14,15 @@ function App() {
           </Container>
         </Navbar>
       </header>
-      <main className="container mt-3">
-        <Outlet />
-      </main>
+      <Container className="mt-3">
+        <main>
+          <Outlet />
+        </main>
+      </Container>
       <footer>
         <div className="text-center">All rights reserved</div>
       </footer>
-    </div>
+    </>
   );
 }
 

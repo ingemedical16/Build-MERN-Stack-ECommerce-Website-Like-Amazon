@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { useEffect, useReducer } from 'react';
-import {Row,Col} from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap';
 
 //import logger from 'use-reducer-logger';
 import Product from '../components/Product';
 import { Helmet } from 'react-helmet-async';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+import { getError } from '../utils';
 
 const FETCH_REQUEST = 'FETCH_REQUEST';
 const FETCH_SUCCESS = 'FETCH_SUCCESS';
@@ -43,7 +46,7 @@ function HomeScreen() {
         console.log(error.message);
         dispatch({
           type: FETCH_FAIL,
-          payload: error.message,
+          payload: getError(error),
         });
       }
     };
@@ -56,27 +59,19 @@ function HomeScreen() {
       </Helmet>
       <h1>Featured Products</h1>
       <div className="products">
-        {loading?
-          (<div>Loading....</div>
-          ): error? (
-            <div>{error}</div>
-          ):(
-            <Row>
-                {
-                     products.map((product, i) => (
-                      <Col sm={6} md={4} lg={3} className='mb-3' key={i}>
-    
-                    <Product product={product}/>
-                    </Col>
-                  ))
-                
-                }
-                
-            </Row>
-            
-            )
-        
-        }
+        {loading ? (
+          <LoadingBox />
+        ) : error ? (
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
+          <Row>
+            {products.map((product, i) => (
+              <Col sm={6} md={4} lg={3} className="mb-3" key={i}>
+                <Product product={product} />
+              </Col>
+            ))}
+          </Row>
+        )}
       </div>
     </>
   );
