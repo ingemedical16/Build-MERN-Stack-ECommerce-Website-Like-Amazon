@@ -9,6 +9,7 @@ import { ACTIONS } from '../Store/action';
 import axios from 'axios';
 const Product = (props) => {
   const { product } = props;
+
   const { state, dispatch: ctxDispatch } = useContext(store);
   const {
     cart: { cartItems },

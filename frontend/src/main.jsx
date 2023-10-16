@@ -14,12 +14,14 @@ import './index.css';
 import HomeScreen from './screens/HomeScreen.jsx';
 import ProductScreen from './screens/ProductDetailsScreen.jsx';
 import StoreProvider from './Store/StoreProvider.jsx';
+import CartScreen from './screens/CartScreen.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/product/:slug" element={<ProductScreen />} />
+      <Route path="/cart" element={<CartScreen />} />
     </Route>
   )
 );

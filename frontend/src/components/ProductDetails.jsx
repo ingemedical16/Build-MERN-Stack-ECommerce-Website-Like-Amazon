@@ -5,16 +5,30 @@ import { Helmet } from 'react-helmet-async';
 import { useContext } from 'react';
 import { store } from '../Store/StoreProvider';
 import { ACTIONS } from '../Store/action';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const ProductDetails = (props) => {
+    const naviget = useNavigate();
   const { product } = props;
-  const { dispatch: ctxDispatch } = useContext(store);
+  const { state, dispatch: ctxDispatch } = useContext(store);
+  const {
+    cart: { cartItems },
+  } = state;
   const { CART_ADD_ITEM } = ACTIONS;
-  const addToCardHandler = () => {
+  const addToCardHandler = async () => {
+    const existItem = cartItems.find((x) => x._id === product._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/v2/products/${product._id}`);
+    if (data.countInStock < quantity) {
+      window.alert('Sorry. Product is out of stock');
+      return;
+    }
     ctxDispatch({
       type: CART_ADD_ITEM,
-      payload: { ...product, quantity: 1 },
+      payload: { ...product, quantity },
     });
+    naviget('/cart');
   };
   return (
     <Row>
