@@ -34,16 +34,24 @@
         x.    create route for /api/products
         xi.   return products
         xii.  run npm start
+
 8.  Fetch Products From Backend
         i.   set proxy in package.json
         ii.  npm install axios
         iii. use state hook
         iv.  use effect hook
         v.   use reducer hook
+
 9.  Manage State By Reducer Hook
         i.   define reducer
         ii.  update fetch data
         iii. get state from usReducer
+
 10. Add bootstrap UI Framework
         i.   npm install react-bootstrap bootstrap
         ii.  update App.js
+
+11. Create Product and Rating Component
+        i.   create Rating component
+        ii.  Create Product component
+        iii. Use Rating component in Product component

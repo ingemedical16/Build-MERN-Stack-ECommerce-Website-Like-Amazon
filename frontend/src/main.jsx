@@ -7,8 +7,9 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import App from './App.jsx';
-import './index.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 import HomeScreen from './screens/HomeScreen.jsx';
 import ProductScreen from './screens/ProductScreen.jsx';
 

@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useEffect, useReducer } from 'react';
-import { Link } from 'react-router-dom';
+import {Row,Col} from 'react-bootstrap'
+
 import logger from 'use-reducer-logger';
+import Product from '../components/Product';
 
 const FETCH_REQUEST = 'FETCH_REQUEST';
 const FETCH_SUCCESS = 'FETCH_SUCCESS';
@@ -54,24 +56,23 @@ function HomeScreen() {
           (<div>Loading....</div>
           ): error? (
             <div>{error}</div>
-          ):
-        products.map((product, i) => (
-          <div className="product" key={i}>
-            <Link to={`/product/${product.slug}`}>
-              <img src={product.image} alt={product.name} />
-            </Link>
-            <div className="product-info">
-              <Link to={`/product/${product.slug}`}>
-                <p>{product.name}</p>
-              </Link>
-
-              <p>
-                <strong>${product.price}</strong>
-              </p>
-              <button>Add to cart</button>
-            </div>
-          </div>
-        ))}
+          ):(
+            <Row>
+                {
+                     products.map((product, i) => (
+                      <Col sm={6} md={4} lg={3} className='mb-3' key={i}>
+    
+                    <Product product={product}/>
+                    </Col>
+                  ))
+                
+                }
+                
+            </Row>
+            
+            )
+        
+        }
       </div>
     </>
   );
