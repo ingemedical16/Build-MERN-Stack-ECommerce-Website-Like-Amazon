@@ -14,7 +14,7 @@ function App() {
           </Container>
         </Navbar>
       </header>
-      <main className="container">
+      <main className="container mt-3">
         <Outlet />
       </main>
       <footer>

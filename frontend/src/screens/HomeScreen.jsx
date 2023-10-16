@@ -2,8 +2,9 @@ import axios from 'axios';
 import { useEffect, useReducer } from 'react';
 import {Row,Col} from 'react-bootstrap'
 
-import logger from 'use-reducer-logger';
+//import logger from 'use-reducer-logger';
 import Product from '../components/Product';
+import { Helmet } from 'react-helmet-async';
 
 const FETCH_REQUEST = 'FETCH_REQUEST';
 const FETCH_SUCCESS = 'FETCH_SUCCESS';
@@ -24,7 +25,7 @@ const reducer = (state, action) => {
 
 function HomeScreen() {
   // const [products, setProducts] = useState([]);
-  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
     loading: true,
     error: '',
     products: [],
@@ -33,7 +34,7 @@ function HomeScreen() {
     const fetchData = async () => {
       dispatch({ type: FETCH_REQUEST });
       try {
-        const res = await axios.get('api/v2/products');
+        const res = await axios.get('/api/v2/products');
         dispatch({
           type: FETCH_SUCCESS,
           payload: res.data,
@@ -50,6 +51,9 @@ function HomeScreen() {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>E-shop</title>
+      </Helmet>
       <h1>Featured Products</h1>
       <div className="products">
         {loading?
