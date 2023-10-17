@@ -122,3 +122,142 @@
         i. create input forms
        ii. handle submit
       iii. create backend api
+
+26. Implement Select Payment Method Screen
+        create input forms
+        handle submit
+27. Create Place Order Screen
+        show cart items, payment and address
+        calculate order summary
+28. Implement Place Order Action
+        handle place order action
+        create order create api
+29. Create Order Screen
+    create backend api for order/:id
+    fetch order api in frontend
+    show order information in 2 cloumns
+
+    Pay Order By PayPal
+generate paypal client id
+create api to return client id
+install react-paypal-js
+use PayPalScriptProvider in index.js
+use usePayPalScriptReducer in Order Screen
+implement loadPaypalScript function
+render paypal button
+implement onApprove payment function
+create pay order api in backend
+Display Order History
+create order screen
+create order history api
+use api in the frontend
+Create Profile Screen
+get user info from context
+show user information
+create user update api
+update user info
+Publish To Heroku
+create and config node project
+serve build folder in frontend folder
+Create heroku account
+connect it to github
+Create mongodb atlas database
+Set database connection in heroku env variables
+Commit and push
+Add Sidebar and Search Box
+add sidebar
+add search box
+Create Search Screen
+show filters
+create api for searching products
+display results
+Create Admin Menu
+define protected route component
+define admin route component
+add menu for admin in header
+Create Dashboard Screen
+create dashboard ui
+implement backend api
+connect ui to backend
+Manage Products
+create products list ui
+implement backend api
+fetch data
+Create Product
+create products button
+implement backend api
+handle on click
+Create Edit Product
+create edit button
+create edit product ui
+dispaly product info in the input boxes
+Implement Update Product
+create edit product backend api
+handle update click
+Upload Product Image
+create cloudinary account
+use the api key in env file
+handle upload file
+implement backend api to upload
+Delete Product
+show delete button
+implement backend api
+handle on click
+List Orders
+create order list screen
+implement backen api
+fetch and display orders
+Deliver Order
+add deliver button
+handle click action
+implement backen api for deliver
+Delete Order
+add delete button
+handle click action
+implement backen api for delete
+List Users
+create user list screen
+implement backen api
+fetch and display users
+Edit User
+create edit button
+create edit product ui
+dispaly product info in the input boxes
+implement backend api
+handle edit click
+Delete User
+add delete button
+handle click action
+implement backen api for delete
+Choose Address On Google Map
+create google map credentials
+update .env file with Google Api Key
+create api to send google api to frontend
+create map screen
+fetch google api
+getUserLocation
+install @react-google-maps/api
+use it in shipping screen
+apply map to the checkout screen
+Email order receipt by mailgun
+create mailgun account
+add and verify your domain to mailgun
+install mailgun-js
+set api key in env file
+change pay order in orderRouter
+send email order receipt
+Review Products
+create submit review form
+handle submit
+implement backend api for review
+Upload multiple Images
+add images to product model
+get images in edit screen
+show images in product screen
+Upgrade To React 18
+install node-check-updates
+ncu -u
+remove package-lock.json
+npm install
+replace render with createRoot
+fix LinkContainer error

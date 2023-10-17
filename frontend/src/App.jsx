@@ -11,7 +11,7 @@ import { getError } from './utils';
 
 
 function App() {
-  const { state, dispatch: ctxDispatch } = useContext(store);
+  const { state } = useContext(store);
   const { fullBox, } = state;
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const [categories, setCategories] = useState([]);
