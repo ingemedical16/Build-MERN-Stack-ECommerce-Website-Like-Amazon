@@ -109,3 +109,16 @@
        i. create signin api
       ii. npm install jsonwebtoken
       iii  define generateToken
+
+23. Complete Signin Screen
+        i.   handle submit action
+        ii.  save token in store and local storage
+        iii. show user name in header
+24. Create Shipping Screen
+        i.  create form inputs
+       ii.  handle save shipping address
+      iii.  add checkout wizard bar
+25. Create Sign Up Screen
+        i. create input forms
+       ii. handle submit
+      iii. create backend api
