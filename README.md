@@ -77,20 +77,30 @@
 
 16. Create Cart Screen
     i. create 2 columns
-   ii. display items list
-  iii. create action column
+    ii. display items list
+    iii. create action column
 
 17. Complete Cart Screen
     i. click handler for inc/dec item
-   ii. click handler for remove item
-  iii. click handler for checkout
+    ii. click handler for remove item
+    iii. click handler for checkout
 
 18. Create Signin Screen
-        i.   create sign in form
-        ii.  add email and password
-        iii. add signin button
+    i. create sign in form
+    ii. add email and password
+    iii. add signin button
 19. Connect To MongoDB Database
-        i.   create atlas monogodb database
-        ii.  install local mongodb database
-        iii. npm install mongoose
-        iv.  connect to mongodb database
+    i. create atlas monogodb database
+    ii. install local mongodb database
+    iii. npm install mongoose
+    iv. connect to mongodb database
+
+20. Seed Sample Products
+    i. create Product model
+    ii. create seed route
+    iii. use route in server.js
+    iv. seed sample product
+
+21. Seed Sample Users
+        i. create user model
+        ii. seed sample users
