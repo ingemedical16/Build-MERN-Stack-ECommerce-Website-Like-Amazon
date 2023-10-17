@@ -24,7 +24,19 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen.jsx';
 import PlaceOrderScreen from './screens/PlaceOrderScreen.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import OrderScreen from './screens/OrderScreen.jsx';
-import PaymentMethodScreen from './screens/PaymentMethodScreen.jsX';
+import PaymentMethodScreen from './screens/PaymentMethodScreen.jsx';
+import ForgetPasswordScreen from './screens/ForgetPasswordScreen.jsx'
+import ResetPasswordScreen from './screens/ResetPasswordScreen.jsx'
+import ProfileScreen from'./screens/ProfileScreen.jsx'
+import MapScreen from './screens/MapScreen.jsx'
+import OrderHistoryScreen from './screens/OrderHistoryScreen.jsx'
+import AdminRoute from './components/AdminRoute.jsx'
+import DashboardScreen from './screens/DashboardScreen.jsx'
+import OrderListScreen from './screens/OrderListScreen.jsx'
+import UserListScreen from './screens/UserListScreen.jsx'
+import ProductListScreen from './screens/ProductListScreen.jsx'
+import ProductEditScreen from './screens/ProductEditScreen.jsx'
+import UserEditScreen from './screens/UserEditScreen.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,8 +47,31 @@ const router = createBrowserRouter(
       <Route path="/search" element={<SearchScreen />} />
       <Route path="/signin" element={<SigninScreen />} />
       <Route path="/signup" element={<SignupScreen />} />
-      <Route path="/shipping" element={<ShippingAddressScreen />} />
-      <Route path="/payment" element={<PaymentMethodScreen />} />
+      <Route
+                path="/forget-password"
+                element={<ForgetPasswordScreen />}
+              />
+              <Route
+                path="/reset-password/:token"
+                element={<ResetPasswordScreen />}
+              />
+       <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <ProfileScreen />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/map"
+                element={
+                  <ProtectedRoute>
+                    <MapScreen />
+                  </ProtectedRoute>
+                }
+              />
+          
       <Route path="/placeorder" element={<PlaceOrderScreen />} />
       <Route
         path="/order/:id"
@@ -46,6 +81,67 @@ const router = createBrowserRouter(
           </ProtectedRoute>
         }
       ></Route>
+
+<Route
+                path="/orderhistory"
+                element={
+                  <ProtectedRoute>
+                    <OrderHistoryScreen />
+                  </ProtectedRoute>
+                }
+              ></Route>
+      <Route path="/shipping" element={<ShippingAddressScreen />} />
+      <Route path="/payment" element={<PaymentMethodScreen />} />
+      {/* Admin Routes */}
+      <Route
+                path="/admin/dashboard"
+                element={
+                  <AdminRoute>
+                    <DashboardScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/orders"
+                element={
+                  <AdminRoute>
+                    <OrderListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/users"
+                element={
+                  <AdminRoute>
+                    <UserListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/products"
+                element={
+                  <AdminRoute>
+                    <ProductListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/product/:id"
+                element={
+                  <AdminRoute>
+                    <ProductEditScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/user/:id"
+                element={
+                  <AdminRoute>
+                    <UserEditScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+      
     </Route>
   )
 );
